@@ -1,0 +1,69 @@
+﻿@model Buckets.Models.Dashboard
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Dashboard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BucketsTile" class="control-label"></label>
+                <input asp-for="BucketsTile" class="form-control" />
+                <span asp-validation-for="BucketsTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccountsTile" class="control-label"></label>
+                <input asp-for="BankAccountsTile" class="form-control" />
+                <span asp-validation-for="BankAccountsTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillsTile" class="control-label"></label>
+                <input asp-for="BillsTile" class="form-control" />
+                <span asp-validation-for="BillsTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DashboardsTile" class="control-label"></label>
+                <input asp-for="DashboardsTile" class="form-control" />
+                <span asp-validation-for="DashboardsTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IncomeTile" class="control-label"></label>
+                <input asp-for="IncomeTile" class="form-control" />
+                <span asp-validation-for="IncomeTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenseTile" class="control-label"></label>
+                <input asp-for="ExpenseTile" class="form-control" />
+                <span asp-validation-for="ExpenseTile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -4,6 +4,24 @@
     ViewData["Title"] = "Index";
 }
 
+<ul>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Buckets" asp-action="Index">Buckets</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="BankAccounts" asp-action="Index">Bank Accounts</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Bills" asp-action="Index">Bills</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Incomes" asp-action="Index">Income Sources</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Expenses" asp-action="Index">Expenses</a>
+    </li>
+</ul>
+
 <h1>Index</h1>
 
 <p>
@@ -25,7 +43,7 @@
                 @Html.DisplayNameFor(model => model.BucketCapacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Outflow)
+                @Html.DisplayNameFor(model => model.Expense)
             </th>
             <th></th>
         </tr>
@@ -46,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.BucketCapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Outflow)
+                @Html.DisplayFor(modelItem => item.Expense)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

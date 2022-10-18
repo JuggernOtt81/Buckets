@@ -54,7 +54,7 @@ namespace Buckets.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,BucketName,Priority,Income,BucketCapacity,Outflow")] Bucket bucket)
+        public async Task<IActionResult> Create([Bind("Id,BucketName,Priority,Income,BucketCapacity,Expense")] Bucket bucket)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Buckets.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,BucketName,Priority,Income,BucketCapacity,Outflow")] Bucket bucket)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,BucketName,Priority,Income,BucketCapacity,Expense")] Bucket bucket)
         {
             if (id != bucket.Id)
             {
