@@ -4,23 +4,29 @@
     ViewData["Title"] = "Index";
 }
 
-<ul>
+
+@*<ul>
+
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Buckets" asp-action="Index">Buckets</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Dashboards" asp-action="Index"><i class="fa-solid fa-gauge"></i> Dashboard</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="BankAccounts" asp-action="Index">Bank Accounts</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Buckets" asp-action="Index"><i class="fa-solid fa-bucket"></i> Buckets</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="BankAccounts" asp-action="Index"><i class="fa-solid fa-building-columns"></i> Bank Accounts</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Bills" asp-action="Index">Bills</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Incomes" asp-action="Index">Income Sources</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Incomes" asp-action="Index"><i class="fa-solid fa-sack-dollar"></i> Income Sources</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Expenses" asp-action="Index">Expenses</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Expenses" asp-action="Index"><i class="fa-solid fa-file-invoice-dollar"></i> Expenses</a>
     </li>
 </ul>
+*@
 
 <h1>Index</h1>
 
@@ -58,38 +64,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BucketsTile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BankAccountsTile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BillsTile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DashboardsTile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IncomeTile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpenseTile)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BucketsTile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BankAccountsTile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillsTile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DashboardsTile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IncomeTile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseTile)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
